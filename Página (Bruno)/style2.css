@@ -1,0 +1,121 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #fbe5df; /* COLOR DE MARCA: Rosa suave de fondo para que el recuadro vino resalte al máximo */
+    font-family: Arial, sans-serif;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.barra {
+    background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio constante en toda la web */
+    height: 80px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px dotted #7f2d31; /* COLOR DE MARCA: Vino tinto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.barra button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Íconos de la barra con transiciones suaves */
+.boton {
+    width: 35px;
+    height: 35px;
+    /* Filtro automático para convertir tus iconos a tu color vino tinto #7f2d31 */
+    filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse sobre los botones de la barra */
+.boton:hover {
+    transform: scale(1.15); 
+    opacity: 0.7;           
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.producto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px; /* Espacio extra al final de la página */
+}
+
+/* --- FOTO DEL PRODUCTO CON ZOOM --- */
+.foto-producto {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(127, 45, 49, 0.1);
+    /* Efecto hover idéntico al de la página principal */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.foto-producto:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(127, 45, 49, 0.2);
+}
+
+/* --- RECUADRO DE INFORMACIÓN --- */
+.info-producto {
+    color: #fffdf1; /* COLOR DE MARCA: Texto crema claro para leer sobre el fondo oscuro */
+    width: 500px;
+    max-width: 90%;
+    background-color: #7f2d31; /* COLOR DE MARCA: Bloque sólido vino tinto muy elegante */
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(127, 45, 49, 0.15);
+    box-sizing: border-box; /* Evita que el padding rompa el tamaño del recuadro */
+}
+
+/* --- PRECIO --- */
+.precio {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fffdf1; /* COLOR DE MARCA: Crema */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- BOTÓN COMPRAR --- */
+.comprar {
+    background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio */
+    color: #7f2d31; /* COLOR DE MARCA: Texto interno en color vino */
+    font-weight: bold;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* Hace que el botón ocupe todo el ancho interno de la caja de forma moderna */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover interactivo para el botón */
+.comprar:hover {
+    background-color: #acdbf1; /* COLOR DE MARCA: Cambia dinámicamente a celeste pastel */
+    transform: scale(1.01);
+}
+
+.comprar:active {
+    transform: scale(0.98);
+}
+
+/* --- LOGO EN BARRA (Si aplica) --- */
+.logo-img1 {
+    height: 70px;
+}
