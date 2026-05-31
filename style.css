@@ -5,14 +5,25 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./bg/yellow.jpg'); 
-    background-position: top center; /* Ajustado para que empiece desde arriba de todo */
-    background-repeat: repeat-y;     /* CORREGIDO: Se repite hacia abajo si la página es larga */
-    background-size: auto;           /* CORREGIDO: Mantiene el tamaño real de la imagen sin agrandarla feo */
-    background-attachment: scroll;   /* El fondo se mueve con la página */
     font-family: Arial, sans-serif;
     width: 100%;
     overflow-x: hidden; 
+    position: relative;
+}
+
+/* --- SOLUCIÓN AL FONDO AGRANDADO: Capa exclusiva para el fondo --- */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Sigue el largo total de tus productos */
+    background-image: url('./bg/yellow.jpg');
+    background-position: top center;
+    background-repeat: repeat-y; /* Se duplica hacia abajo perfectamente */
+    background-size: 100% auto;  /* Se ajusta al ancho de la PC pero NO se estira hacia abajo */
+    z-index: -1; /* Se posiciona detrás de todo el contenido */
 }
 
 /* --- PANTALLA DE CARGA --- */
@@ -22,7 +33,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #acdbf1; /* COLOR DE MARCA: Celeste pastel */
+    background: #acdbf1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,6 +54,8 @@ body {
     margin: 0;
     padding: 0;
     display: block; 
+    position: relative;
+    z-index: 1;
 }
 
 /* --- BARRA DE NAVEGACIÓN --- */
