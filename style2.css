@@ -5,14 +5,15 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./img/tu-fondo.jpg'); /* Reemplaza con el nombre exacto de tu imagen */
+    background-image: url('./img/bg/pink.jpg'); 
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    /* --- AQUÍ CAMBIAMOS FIXED POR SCROLL --- */
+    background-attachment: scroll; 
     font-family: Arial, sans-serif;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
 /* --- BARRA DE NAVEGACIÓN --- */
