@@ -77,7 +77,7 @@
        <a href="contactos.html"> <img src="./img/contacto.png" class="boton"></a>
     </div>
 
-    <div id="contenido">
+    <div id="contenido-titulo">
         <h1>Bienvenido</h1>
     </div>
 
@@ -118,10 +118,10 @@
 </div>
 
 <script>
-// Maneja la desaparición de la carga y muestra la estructura responsiva completa
+// Cambiado a "block" para asegurar que los elementos caigan uno debajo del otro naturalmente
 setTimeout(function() {
     document.getElementById("loading").style.display = "none";
-    document.getElementById("todo-el-contenido").style.display = "flex";
+    document.getElementById("todo-el-contenido").style.display = "block";
 }, 2000);
 
 const imagenes = [
