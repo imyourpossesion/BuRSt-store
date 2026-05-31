@@ -2,10 +2,14 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+   body {
     margin: 0;
     padding: 0;
-    background-color: #fffdf1; /* COLOR DE MARCA: Fondo principal crema claro */
+    background-image: url('./bg/yellow.jpg'); /* Reemplaza con el nombre exacto de tu imagen */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
     width: 100%;
     overflow-x: hidden; /* Evita que la pantalla baile hacia los lados */
