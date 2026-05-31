@@ -40,9 +40,10 @@ body {
 .todo-el-contenido {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* <-- ¡AGREGA ESTA LÍNEA AQUÍ! */
     align-items: center;
 }
+
 
 /* --- BARRA DE NAVEGACIÓN --- */
 .barra {
