@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./img/bg/pink.jpg'); 
+    background-image: url('./bg/pink.jpg'); 
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
