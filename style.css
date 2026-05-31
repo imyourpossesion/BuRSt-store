@@ -5,13 +5,28 @@ html {
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    background-color: #fffdf1;
+    background-color: #fffdf1; /* COLOR DE MARCA: Fondo principal crema claro */
     font-family: Arial, sans-serif;
-    /* Esto ayuda a que todo lo que esté suelto en el body se centre automáticamente */
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center; /* Centra todo horizontalmente */
+    width: 100%;
+    overflow-x: hidden; /* Evita que la página se mueva hacia los costados */
+}
+
+/* --- PANTALLA DE CARGA --- */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #acdbf1; /* COLOR DE MARCA: Celeste pastel */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
 .gif-carga {
@@ -20,29 +35,21 @@ body {
     opacity: 0.3;
 }
 
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Usamos vw (viewport width) para forzar el ancho completo de la pantalla */
-    height: 100vh;
-    background: #acdbf1;
+/* --- CONTENEDOR PRINCIPAL --- */
+/* Esta clase envolverá todo tu contenido para que no se desarme */
+.todo-el-contenido {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    z-index: 9999;
 }
 
 /* --- BARRA DE NAVEGACIÓN --- */
 .barra {
-    background-color: #f7cdcd;
+    background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio */
     height: 80px;
-    width: 100%; /* Forzamos a que ocupe todo el ancho del dispositivo */
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px dotted #7f2d31;
+    width: 100vw; /* Asegura el ancho completo de lado a lado */
+    border-bottom: 3px dotted #7f2d31; /* COLOR DE MARCA: Vino tinto */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,73 +62,64 @@ body {
     cursor: pointer;
 }
 
-/* Íconos de la barra con efecto idéntico a los productos */
 .boton {
     width: 35px;
     height: 35px;
-    /* Este filtro transforma tus iconos PNG al color vino tinto #7f2d31 automáticamente */
     filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
     transition: transform 0.3s ease, opacity 0.3s ease; 
     cursor: pointer;
 }
 
-/* Cuando pasas el mouse sobre los iconos de la barra */
 .boton:hover {
     transform: scale(1.15); 
     opacity: 0.7;
 }
 
-#contenido {
-    display: none;
-}
-
 .logo-img1 {
     width: 30%;
+    max-width: 200px;
 }
 
 .logo-img2 {
     display: block;
     margin: 40px auto; 
-    width: 30%;
+    width: 25%;
+    max-width: 180px;
 }
 
 /* --- TEXTOS --- */
 h1 {
     text-align: center;
-    color: #7f2d31; /* COLOR DE MARCA: Vino tinto para alta legibilidad */  
+    color: #7f2d31; 
     animation: aparecer 1s;
 }
 
 h2 {
     text-align: center;
-    color: #7f2d31; /* COLOR DE MARCA: Vino tinto */  
+    color: #7f2d31; 
 }
 
 p {
     text-align: center;
-    color: #7f2d31; /* COLOR DE MARCA: Vino tinto */
+    color: #7f2d31; 
 }
 
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0px); }
 }
 
 /* --- CUADRADO DE NOVEDADES Y CARRUSEL --- */
 .contenedor-novedades {
-    background-color: #fbe5df; /* COLOR DE MARCA: Rosa suave para resaltar del fondo crema */
+    background-color: #fbe5df; 
+    width: 90%;
     max-width: 850px;          
     margin: 30px auto;         
     padding: 30px;             
     border-radius: 20px;       
-    box-shadow: 0 6px 20px rgba(127, 45, 49, 0.08); /* Sombra sutil con tono vino */
-    border: 1px solid rgba(247, 205, 205, 0.5); /* Borde fino con el rosa intermedio */
+    box-shadow: 0 6px 20px rgba(127, 45, 49, 0.08); 
+    border: 1px solid rgba(247, 205, 205, 0.5); 
+    box-sizing: border-box;
 }
 
 .contenedor-novedades h2 {
@@ -129,37 +127,32 @@ p {
     margin-bottom: 25px;
 }
 
-/* --- CONTENEDOR DEL CARRUSEL --- */
 .carrusel {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    width: 100%;
 }
 
 .carrusel img {
-    width: 700px;
-    height: 350px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    max-height: 350px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(127, 45, 49, 0.15);
 }
 
-.fade {
-    animation: fade 0.5s;
-}
+.fade { animation: fade 0.5s; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
-@keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* BOTONES DEL BANNER */
 .carrusel button {
     font-size: 20px;
-    border: 2px solid #7f2d31; /* COLOR DE MARCA: Vino tinto */ 
+    border: 2px solid #7f2d31; 
     background: transparent;   
-    color: #7f2d31; /* COLOR DE MARCA: Vino tinto */            
+    color: #7f2d31;             
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -169,23 +162,29 @@ p {
     align-items: center;
     transition: all 0.3s ease; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-shrink: 0;
 }
 
 .carrusel button:hover {
-    background: #7f2d31; /* Al pasar el cursor se llena de vino tinto */      
-    color: #fffdf1;      /* La flecha cambia al color crema de fondo */        
+    background: #7f2d31; 
+    color: #fffdf1;        
     transform: scale(1.1);     
     box-shadow: 0 4px 10px rgba(127, 45, 49, 0.3); 
 }
 
-.carrusel button:active {
-    transform: scale(0.95);
+/* --- SECCIÓN DE PRODUCTOS --- */
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 35px;
 }
 
-/* --- SECCIÓN DE PRODUCTOS CON EFECTO HOVER --- */
 .foto-producto {
-    width: 400px;
-    height: 400px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(127, 45, 49, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -197,67 +196,33 @@ p {
     box-shadow: 0 8px 24px rgba(127, 45, 49, 0.25);
 }
 
-.producto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 35px;
-}
+/* ==============================================
+   --- VERSIÓN DISPOSITIVOS MÓVILES (CELULARES) ---
+   ============================================== */
 @media (max-width: 768px) {
-    
-    /* Forzamos a que el cuerpo de la página centre todo en el celu */
-    body {
-        align-items: center;
-        width: 100%;
-        overflow-x: hidden; /* Evita el scroll horizontal molesto */
+    .barra {
+        height: 65px;
+        gap: 15px;
     }
-
-    /* El logo de carga y el de la tienda */
     .logo-img1, .logo-img2 {
-        width: 60%;
-        max-width: 250px;
-        height: auto;
+        width: 50%;
     }
-    
-    /* El cuadrado rosa se adapta al ancho del celular */
     .contenedor-novedades {
-        margin: 15px;
         padding: 15px;
-        width: 85%; /* No usa píxeles fijos, usa porcentaje */
-        box-sizing: border-box;
+        margin: 20px auto;
     }
-    
-    /* Reducimos el carrusel para que no sea gigante */
     .carrusel {
-        width: 100%;
-        gap: 8px;
-        justify-content: space-between;
+        gap: 10px;
     }
-    
     .carrusel img {
-        width: 70%;        /* Le damos un tamaño controlado para que entren las flechas a los lados */
-        height: auto;      /* Evita que se estire o se vea desproporcionado */
-        max-height: 180px; /* Un tope máximo de alto para pantallas chicas */
-        object-fit: cover;
+        max-height: 180px;
     }
-    
     .carrusel button {
         width: 35px;
         height: 35px;
         font-size: 14px;
-        flex-shrink: 0; /* Evita que las flechas se aplasten */
     }
-    
-    /* Centramos la sección de productos */
-    .producto {
-        width: 100%;
-        align-items: center;
-    }
-
-    /* Las fotos de las carteras */
     .foto-producto {
-        width: 80%;        /* Ya no miden 400px, ahora se adaptan al ancho del celu */
-        max-width: 300px;  /* Evita que en pantallas medianas se vea gigante */
-        height: auto;      /* Proporción perfecta */
+        max-width: 280px;
     }
 }
