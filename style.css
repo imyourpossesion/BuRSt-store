@@ -18,7 +18,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%; 
-    background-image: url('./bg/yellow.jpg');
+    background-image: url('./bg/yellow2.jpg');
     background-position: top center;
     background-repeat: repeat-y; /* Se duplica hacia abajo sin romperse */
     background-size: 100% auto;  /* Se ajusta al ancho de la PC perfectamente sin estirarse verticalmente */
