@@ -11,19 +11,18 @@ body {
     position: relative;
 }
 
-/* --- SOLUCIÓN AL FONDO AGRANDADO: Capa exclusiva para el fondo --- */
-body::before {
-    content: "";
+/* --- NUEVA CAPA DE FONDO INMUTABLE --- */
+.fondo-repetido {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Sigue el largo total de tus productos */
+    height: 100%; /* Sigue el largo total de la página */
     background-image: url('./bg/yellow.jpg');
     background-position: top center;
-    background-repeat: repeat-y; /* Se duplica hacia abajo perfectamente */
-    background-size: 100% auto;  /* Se ajusta al ancho de la PC pero NO se estira hacia abajo */
-    z-index: -1; /* Se posiciona detrás de todo el contenido */
+    background-repeat: repeat;    /* Se repite en todas las direcciones necesarias */
+    background-size: contain;   /* OBLIGA a la imagen a mantener su tamaño nativo sin agrandarse */
+    z-index: -1;                /* Se oculta detrás de tus productos */
 }
 
 /* --- PANTALLA DE CARGA --- */
