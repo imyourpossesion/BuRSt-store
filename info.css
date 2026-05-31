@@ -1,16 +1,20 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./bg/lb.jpg'); 
+    background-image: url('./bg/lb.jpg'); /* Tu fondo de la página info */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* --- AQUÍ CAMBIAMOS FIXED POR SCROLL --- */
-    background-attachment: scroll; 
+    background-attachment: scroll; /* CORREGIDO: Ahora se mueve con la página */
     font-family: Arial, sans-serif;
-    width: 100%;
+    width: 100vw; /* CORREGIDO: Clava el ancho para que la barra de scroll de la PC no mueva nada */
     overflow-x: hidden; 
 }
+
 /* --- BARRA DE NAVEGACIÓN --- */
 .barra {
     background-color: #f7cdcd; 
@@ -21,6 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 25px;
+    box-sizing: border-box; /* CORREGIDO: Protege el contenido de la barra */
 }
 
 .boton {
@@ -40,8 +45,8 @@ body {
 .logo {
     width: 350px;
     max-width: 70%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    display: block;        /* CORREGIDO: Hace que se comporte como un bloque independiente */
+    margin: 30px auto;    /* CORREGIDO: Lo obliga a quedarse en el centro exacto de la pantalla */
     height: auto;
 }
 
@@ -62,6 +67,7 @@ body {
 h1 {
     color: #7f2d31; 
     margin-top: 0;
+    text-align: center; /* Centra el título para mantener el minimalismo */
 }
 
 p {
@@ -73,13 +79,15 @@ p {
 
 /* --- MÓVIL --- */
 @media (max-width: 768px) {
+    body {
+        width: 100%; /* En celulares vuelve a su comportamiento normal */
+    }
     .barra {
         height: 65px;
         gap: 15px;
     }
     .logo {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin: 20px auto; /* Mantiene el centrado en pantallas pequeñas */
     }
     .recuadro {
         padding: 20px;
