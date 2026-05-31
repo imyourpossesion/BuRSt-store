@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    background-color: #7f2d31; /* COLOR DE MARCA: Fondo vino tinto profundo, súper imponente y elegante */
+    font-family: Arial, sans-serif;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.barra {
+    background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio para mantener la armonía global */
+    height: 80px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px dotted #7f2d31; /* COLOR DE MARCA: Vino tinto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.barra button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Íconos de la barra */
+.boton {
+    width: 35px;
+    height: 35px;
+    /* Filtro que convierte automáticamente tus iconos de la barra al color vino tinto #7f2d31 */
+    filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse sobre los botones de la barra */
+.boton:hover {
+    transform: scale(1.15); 
+    opacity: 0.7;           
+}
+
+/* --- LOGO --- */
+.logo-img1 {
+    display: block;
+    margin: 40px auto 20px auto;
+    width: 30%;
+}
+
+/* --- TEXTOS PRINCIPALES --- */
+h1 {
+    text-align: center;
+    color: #fffdf1;  /* COLOR DE MARCA: Crema claro para que brille sobre el fondo vino tinto */
+    font-size: 32px;
+}
+
+/* --- RECUADRO DE CONTACTOS --- */
+.recuadro {
+    width: 700px;
+    max-width: 90%;
+    margin: 30px auto 50px auto;
+    background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio como contenedor principal */
+    border-radius: 30px;
+    padding: 35px;
+    border: 3px dotted #fffdf1; /* COLOR DE MARCA: Puntos en crema claro, queda súper tierno */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* --- FILAS DE CONTACTO (Instagram, Mail, WhatsApp, etc.) --- */
+.contacto {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    /* Efecto para que cuando pases el mouse por encima de un contacto, este reaccione */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Último elemento de la lista no lleva margen abajo */
+.contacto:last-child {
+    margin-bottom: 0;
+}
+
+/* Efecto hover interactivo y tierno en cada opción de contacto */
+.contacto:hover {
+    transform: translateX(10px) scale(1.02); /* Se desliza un poquito a la derecha y se agranda */
+    background-color: #fbe5df; /* COLOR DE MARCA: Se ilumina en un rosa más suave */
+}
+
+/* Iconos de las redes sociales */
+.icono {
+    width: 45px;
+    height: 45px;
+    /* Convierte los iconos de las redes también al color vino tinto de la tienda */
+    filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
+}
+
+/* Texto de los contactos */
+.contacto p {
+    color: #7f2d31; /* COLOR DE MARCA: Vino tinto para máxima lectura dentro de la caja rosa */
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
