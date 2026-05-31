@@ -7,11 +7,8 @@ body {
     padding: 0;
     background-color: #fffdf1; /* COLOR DE MARCA: Fondo principal crema claro */
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra todo horizontalmente */
     width: 100%;
-    overflow-x: hidden; /* Evita que la página se mueva hacia los costados */
+    overflow-x: hidden; /* Evita que la pantalla baile hacia los lados */
 }
 
 /* --- PANTALLA DE CARGA --- */
@@ -36,20 +33,18 @@ body {
 }
 
 /* --- CONTENEDOR PRINCIPAL --- */
-/* Esta clase envolverá todo tu contenido para que no se desarme */
-.todo-el-contenido {
+#todo-el-contenido {
     width: 100%;
-    display: flex;
-    flex-direction: column; /* <-- ¡AGREGA ESTA LÍNEA AQUÍ! */
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    display: block; /* Asegura el flujo vertical */
 }
-
 
 /* --- BARRA DE NAVEGACIÓN --- */
 .barra {
     background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio */
     height: 80px;
-    width: 100vw; /* Asegura el ancho completo de lado a lado */
+    width: 100%;
     border-bottom: 3px dotted #7f2d31; /* COLOR DE MARCA: Vino tinto */
     display: flex;
     justify-content: center;
@@ -93,6 +88,7 @@ h1 {
     text-align: center;
     color: #7f2d31; 
     animation: aparecer 1s;
+    margin-top: 20px;
 }
 
 h2 {
@@ -190,6 +186,7 @@ p {
     box-shadow: 0 4px 12px rgba(127, 45, 49, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .foto-producto:hover {
@@ -211,6 +208,7 @@ p {
     .contenedor-novedades {
         padding: 15px;
         margin: 20px auto;
+        width: 92%;
     }
     .carrusel {
         gap: 10px;
