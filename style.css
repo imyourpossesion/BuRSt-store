@@ -6,10 +6,10 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('./bg/yellow.jpg'); 
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll; /* El fondo se mueve con la página */
+    background-position: top center; /* Ajustado para que empiece desde arriba de todo */
+    background-repeat: repeat-y;     /* CORREGIDO: Se repite hacia abajo si la página es larga */
+    background-size: auto;           /* CORREGIDO: Mantiene el tamaño real de la imagen sin agrandarla feo */
+    background-attachment: scroll;   /* El fondo se mueve con la página */
     font-family: Arial, sans-serif;
     width: 100%;
     overflow-x: hidden; 
@@ -28,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease; /* CORRECCIÓN: Desvanece la pantalla para que ande el fondo */
+    transition: opacity 0.5s ease; 
 }
 
 .gif-carga {
@@ -55,6 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 25px;
+    box-sizing: border-box;
 }
 
 .barra button {
@@ -199,7 +200,7 @@ p {
     box-shadow: 0 8px 24px rgba(127, 45, 49, 0.25);
 }
 
-/* --- DISPOSITIVOS MÓVILES --- */
+/* --- VERSIÓN DISPOSITIVOS MÓVILES --- */
 @media (max-width: 768px) {
     .barra {
         height: 65px;
