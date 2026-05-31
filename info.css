@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #acdbf1; /* COLOR DE MARCA: Celeste pastel */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.barra {
+    background-color: #f7cdcd; 
+    height: 80px;
+    width: 100%;
+    border-bottom: 3px dotted #7f2d31; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.boton {
+    width: 35px;
+    height: 35px;
+    filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer;
+}
+
+.boton:hover {
+    transform: scale(1.15); 
+    opacity: 0.7;
+}
+
+/* --- LOGO --- */
+.logo {
+    width: 350px;
+    max-width: 70%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+}
+
+/* --- RECUADRO DE INFORMACIÓN --- */
+.recuadro {
+    width: 700px;
+    max-width: 85%;
+    margin: 0 auto 40px auto;
+    background-color: #fffdf1; 
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0px 6px 20px rgba(127, 45, 49, 0.08); 
+    border: 1px solid rgba(247, 205, 205, 0.4); 
+    box-sizing: border-box;
+}
+
+/* --- TEXTOS --- */
+h1 {
+    color: #7f2d31; 
+    margin-top: 0;
+}
+
+p {
+    color: #7f2d31; 
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* --- MÓVIL --- */
+@media (max-width: 768px) {
+    .barra {
+        height: 65px;
+        gap: 15px;
+    }
+    .logo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .recuadro {
+        padding: 20px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
