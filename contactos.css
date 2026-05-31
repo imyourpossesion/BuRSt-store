@@ -1,10 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #7f2d31; /* COLOR DE MARCA: Vino tinto profundo */
+    background-image: url('./bg/red.jpg'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* --- AQUÍ CAMBIAMOS FIXED POR SCROLL --- */
+    background-attachment: scroll; 
     font-family: Arial, sans-serif;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
 /* --- BARRA DE NAVEGACIÓN --- */
