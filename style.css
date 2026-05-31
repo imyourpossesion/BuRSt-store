@@ -203,3 +203,61 @@ p {
     align-items: center;
     margin-bottom: 35px;
 }
+@media (max-width: 768px) {
+    
+    /* Forzamos a que el cuerpo de la página centre todo en el celu */
+    body {
+        align-items: center;
+        width: 100%;
+        overflow-x: hidden; /* Evita el scroll horizontal molesto */
+    }
+
+    /* El logo de carga y el de la tienda */
+    .logo-img1, .logo-img2 {
+        width: 60%;
+        max-width: 250px;
+        height: auto;
+    }
+    
+    /* El cuadrado rosa se adapta al ancho del celular */
+    .contenedor-novedades {
+        margin: 15px;
+        padding: 15px;
+        width: 85%; /* No usa píxeles fijos, usa porcentaje */
+        box-sizing: border-box;
+    }
+    
+    /* Reducimos el carrusel para que no sea gigante */
+    .carrusel {
+        width: 100%;
+        gap: 8px;
+        justify-content: space-between;
+    }
+    
+    .carrusel img {
+        width: 70%;        /* Le damos un tamaño controlado para que entren las flechas a los lados */
+        height: auto;      /* Evita que se estire o se vea desproporcionado */
+        max-height: 180px; /* Un tope máximo de alto para pantallas chicas */
+        object-fit: cover;
+    }
+    
+    .carrusel button {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        flex-shrink: 0; /* Evita que las flechas se aplasten */
+    }
+    
+    /* Centramos la sección de productos */
+    .producto {
+        width: 100%;
+        align-items: center;
+    }
+
+    /* Las fotos de las carteras */
+    .foto-producto {
+        width: 80%;        /* Ya no miden 400px, ahora se adaptan al ancho del celu */
+        max-width: 300px;  /* Evita que en pantallas medianas se vea gigante */
+        height: auto;      /* Proporción perfecta */
+    }
+}
