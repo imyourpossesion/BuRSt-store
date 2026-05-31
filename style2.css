@@ -127,3 +127,145 @@ body {
         margin-top: 20px;
     }
 }
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    overflow-x: hidden; 
+    position: relative;
+}
+
+/* --- FONDO DEFINITIVO: Se repite sin estirarse --- */
+body::before {
+    content: "";
+    position: fixed; /* Fijo para que acompañe el scroll suavemente */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./bg/pink.jpg');
+    background-position: center center;
+    background-repeat: repeat-y; 
+    background-size: 100% auto;
+    z-index: -1; 
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.barra {
+    background-color: #f7cdcd; 
+    height: 80px;
+    width: 100%;
+    border-bottom: 3px dotted #7f2d31; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    box-sizing: border-box;
+    position: relative; /* Asegura que la barra esté sobre el fondo */
+}
+
+.boton {
+    width: 35px;
+    height: 35px;
+    filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer;
+}
+
+.boton:hover {
+    transform: scale(1.15); 
+    opacity: 0.7;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.producto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px; 
+    width: 100%;
+}
+
+/* --- FOTO DEL PRODUCTO --- */
+.foto-producto {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(127, 45, 49, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.foto-producto:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(127, 45, 49, 0.2);
+}
+
+/* --- RECUADRO DE INFORMACIÓN --- */
+.info-producto {
+    color: #fffdf1; 
+    width: 500px;
+    max-width: 90%;
+    background-color: #7f2d31; 
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(127, 45, 49, 0.15);
+    box-sizing: border-box; 
+}
+
+.info-producto h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.info-producto p {
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* --- PRECIO --- */
+.precio {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fffdf1; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- BOTÓN COMPRAR --- */
+.comprar {
+    background-color: #f7cdcd; 
+    color: #7f2d31; 
+    font-weight: bold;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.comprar:hover {
+    background-color: #acdbf1; 
+    transform: scale(1.01);
+}
+
+/* --- MÓVIL --- */
+@media (max-width: 768px) {
+    .barra {
+        height: 65px;
+        gap: 15px;
+    }
+    .producto-container {
+        margin-top: 20px;
+    }
+}
