@@ -4,8 +4,14 @@ html {
 
 body {
     margin: 0;
-    background-color: #fffdf1; /* COLOR DE MARCA: Fondo principal crema claro, limpio y estético */
+    padding: 0;
+    width: 100%;
+    background-color: #fffdf1;
     font-family: Arial, sans-serif;
+    /* Esto ayuda a que todo lo que esté suelto en el body se centre automáticamente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
 .gif-carga {
@@ -18,9 +24,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw; /* Usamos vw (viewport width) para forzar el ancho completo de la pantalla */
     height: 100vh;
-    background: #acdbf1; /* COLOR DE MARCA: Celeste pastel para la pantalla de carga */
+    background: #acdbf1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,12 +36,13 @@ body {
 
 /* --- BARRA DE NAVEGACIÓN --- */
 .barra {
-    background-color: #f7cdcd; /* COLOR DE MARCA: Rosa intermedio */
+    background-color: #f7cdcd;
     height: 80px;
+    width: 100%; /* Forzamos a que ocupe todo el ancho del dispositivo */
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 3px dotted #7f2d31; /* COLOR DE MARCA: Vino tinto */
+    border-bottom: 3px dotted #7f2d31;
     display: flex;
     justify-content: center;
     align-items: center;
