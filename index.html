@@ -60,71 +60,65 @@
     <div class="fondo-repetido"></div>
 
     <div id="loading">
-        <div class="spinner"></div>
-    </div>
-
-    <div id="todo-el-contenido">
-<div id="loading">
-    <img src="./img/BuRSt.png" class="logo-img1">
-    
-    <div class="container">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-</div>
-
-<div id="todo-el-contenido" style="display: none;">
-
-    <div class="barra">
-       <a href="index.html"> <img src="./img/home.png" class="boton"></a>
-       <a href="info.html"> <img src="./img/about.png" class="boton"> </a>
-       <a href="contactos.html"> <img src="./img/contacto.png" class="boton"></a>
-    </div>
-
-    <div id="contenido-titulo">
-        <h1>Bienvenido</h1>
-    </div>
-
-    <img src="./img/BuRSt2.png" class="logo-img2">
-
-    <div class="contenedor-novedades">
-        <h2>Novedades</h2>
-        <div class="carrusel">
-            <button onclick="anterior()">◀</button>
-            <img id="imagenCarrusel" src="./img/banner1.png">
-            <button onclick="siguiente()">▶</button>
+        <img src="./img/BuRSt.png" class="logo-img1">
+        <div class="container">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
         </div>
     </div>
 
-    <br><br><br><br>
+    <div id="todo-el-contenido" style="display: none;">
 
-    <div class="producto">
-      <a href="compra.html"><img src="./img/polkadotbag.jpg" class="foto-producto"></a>
-      <h2>"Bonita" Bag</h2>
-      <p>$67.000</p>
-      <br><br>
-      
-      <a href="compra2.html"><img src="./img/birkin.jpg" class="foto-producto"></a>
-      <h2>Plaid Bag</h2>
-      <p>$169.000</p>
-      <br><br>
-      
-      <a href="compra.html"><img src="https://i.postimg.cc/FHXdBMCb/IMG-3639.jpg" class="foto-producto"></a>
-      <h2>mañana</h2>
-      <p>$25</p>
-      <br><br>
-      
-      <a href="compra.html"><img src="https://i.postimg.cc/vBKDLk62/IMG-2726.jpg" class="foto-producto"></a>
-      <h2>uwu</h2>
-      <p>$25</p>
+        <div class="barra">
+           <a href="index.html"> <img src="./img/home.png" class="boton"></a>
+           <a href="info.html"> <img src="./img/about.png" class="boton"> </a>
+           <a href="contactos.html"> <img src="./img/contacto.png" class="boton"></a>
+        </div>
+
+        <div id="contenido-titulo">
+            <h1>Bienvenido</h1>
+        </div>
+
+        <img src="./img/BuRSt2.png" class="logo-img2">
+
+        <div class="contenedor-novedades">
+            <h2>Novedades</h2>
+            <div class="carrusel">
+                <button onclick="anterior()">◀</button>
+                <img id="imagenCarrusel" src="./img/banner1.png">
+                <button onclick="siguiente()">▶</button>
+            </div>
+        </div>
+
+        <br><br><br><br>
+
+        <div class="producto">
+          <a href="compra.html"><img src="./img/polkadotbag.jpg" class="foto-producto"></a>
+          <h2>"Bonita" Bag</h2>
+          <p>$67.000</p>
+          <br><br>
+          
+          <a href="compra2.html"><img src="./img/birkin.jpg" class="foto-producto"></a>
+          <h2>Plaid Bag</h2>
+          <p>$169.000</p>
+          <br><br>
+          
+          <a href="compra.html"><img src="https://i.postimg.cc/FHXdBMCb/IMG-3639.jpg" class="foto-producto"></a>
+          <h2>mañana</h2>
+          <p>$25</p>
+          <br><br>
+          
+          <a href="compra.html"><img src="https://i.postimg.cc/vBKDLk62/IMG-2726.jpg" class="foto-producto"></a>
+          <h2>uwu</h2>
+          <p>$25</p>
+        </div>
+
     </div>
 
-</div>
-
 <script>
-// Cambiado a "block" para asegurar que los elementos caigan uno debajo del otro naturalmente
+// Oculta la pantalla de carga y activa la tienda después de 2 segundos
 setTimeout(function() {
     document.getElementById("loading").style.display = "none";
     document.getElementById("todo-el-contenido").style.display = "block";
