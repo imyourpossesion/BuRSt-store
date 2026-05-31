@@ -1,7 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #acdbf1; /* COLOR DE MARCA: Celeste pastel */
+    background-image: url('./img/tu-fondo.jpg'); /* Reemplaza con el nombre exacto de tu imagen */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
     text-align: center;
     width: 100%;
