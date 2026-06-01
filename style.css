@@ -157,7 +157,7 @@ p {
     max-height: 350px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(127, 45, 49, 0.15);
+    box-shadow: 0 10px 15px -5PX rgba(0, 0, 0, 0.2);
 }
 
 .fade { animation: fade 0.5s; }
