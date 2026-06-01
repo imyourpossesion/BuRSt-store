@@ -1,114 +1,232 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Burst Store</title>
+
     <link rel="stylesheet" href="style.css">
+
     
+
     <style>
-      /* Estilos para el cargador */
+
       .container {
+
         --uib-size: 55px;
+
         --uib-color: white;
+
         --uib-speed: 1s;
+
         display: flex;
+
         align-items: flex-end;
+
         justify-content: space-between;
+
         height: calc(var(--uib-size) * 0.5);
+
         width: var(--uib-size);
+
         margin: 25px auto; 
+
       }
+
       .dot {
+
         width: calc(var(--uib-size) * 0.17);
+
         height: calc(var(--uib-size) * 0.17);
+
         border-radius: 50%;
+
         background-color: var(--uib-color);
+
         animation: jump var(--uib-speed) ease-in-out infinite;
+
       }
+
       .dot:nth-child(1) { animation-delay: -0.45s; }
+
       .dot:nth-child(2) { animation-delay: -0.3s; }
+
       .dot:nth-child(3) { animation-delay: -0.15s; }
+
       @keyframes jump {
+
         0%, 100% { transform: translateY(0px); }
+
         50% { transform: translateY(-200%); }
+
       }
+
     </style>
+
 </head>
+
 <body>
+
     <div class="fondo-repetido"></div>
 
+
+
     <div id="loading">
+
         <img src="./img/BuRSt.png" class="logo-img1">
+
         <div class="container">
+
           <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+
         </div>
+
     </div>
+
+
 
     <div id="todo-el-contenido" style="display: none;">
+
         <div class="barra">
+
            <a href="index.html"> <img src="./img/home.png" class="boton"></a>
+
            <a href="info.html"> <img src="./img/about.png" class="boton"> </a>
+
            <a href="contactos.html"> <img src="./img/contacto.png" class="boton"></a>
+
         </div>
+
+
 
         <h1>Bienvenido</h1>
+
         <img src="./img/BuRSt2.png" class="logo-img2">
 
+
+
         <div class="contenedor-novedades">
+
             <h2>Novedades</h2>
+
             <div class="carrusel">
+
                 <button onclick="anterior()">◀</button>
+
                 <img id="imagenCarrusel" src="./img/banner1.png">
+
                 <button onclick="siguiente()">▶</button>
+
             </div>
+
         </div>
+
+
 
         <div class="producto">
+
           <a href="compra.html"><img src="./img/polkadotbag.jpg" class="foto-producto"></a>
+
           <h2>"Bonita" Bag</h2>
+
           <p>$67.000</p>
+
           <a href="compra2.html"><img src="./img/birkin.jpg" class="foto-producto"></a>
+
           <h2>Plaid Bag</h2>
+
           <p>$169.000</p>
+
           <a href="compra2.html"><img src="./img/placeholder.png" class="foto-producto"></a>
+
           <h2>si</h2>
+
           <p>$169.000</p>
+
           <a href="compra2.html"><img src="./img/placeholder.png" class="foto-producto"></a>
+
           <h2>si</h2>
+
           <p>$169.000</p>
+
         </div>
+
     </div>
 
+
+
 <script>
-    // 1. Usamos minúsculas estrictas para evitar errores de servidor
-    const imagenes = ["./img/banner1.png", "./img/banner2.png", "./img/banner3.png"];
+
+    const imagenes = ["./img/banner1.PNG", "./img/banner2.PNG", "./img/banner3.png"];
+
     let actual = 0;
 
-    // 2. Ocultamos el loading tras 1.5 segundos SÍ O SÍ
-    // Esto evita que si una imagen falla, la pantalla quede bloqueada por siempre
-    setTimeout(function() {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("todo-el-contenido").style.display = "block";
-    }, 1500);
+
+
+    // Precarga
+
+    imagenes.forEach(src => { new Image().src = src; });
+
+
+
+    // Mostrar contenido al cargar
+
+    window.onload = function() {
+
+        setTimeout(() => {
+
+            document.getElementById("loading").style.display = "none";
+
+            document.getElementById("todo-el-contenido").style.display = "block";
+
+        }, 500);
+
+    };
+
+
 
     function cambiarImagen(){
+
         const img = document.getElementById("imagenCarrusel");
+
         img.classList.remove("fade");
-        void img.offsetWidth; 
+
+        void img.offsetWidth;
+
         img.src = imagenes[actual];
+
         img.classList.add("fade");
+
     }
+
+
 
     function siguiente(){
+
         actual = (actual + 1) % imagenes.length;
+
         cambiarImagen();
+
     }
 
+
+
     function anterior(){
+
         actual = (actual - 1 + imagenes.length) % imagenes.length;
+
         cambiarImagen();
+
     }
+
 </script>
+
 </body>
-</html>
+
+</html> 
+
