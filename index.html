@@ -118,6 +118,11 @@
     </div>
 
 <script>
+    // Precarga de imágenes
+imagenes.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+});
 // Oculta la pantalla de carga y activa la tienda después de 2 segundos
 setTimeout(function() {
     document.getElementById("loading").style.display = "none";
@@ -125,8 +130,8 @@ setTimeout(function() {
 }, 2000);
 
 const imagenes = [
-    "./img/banner1.PNG",
-    "./img/banner2.PNG",
+    "./img/banner1.png",
+    "./img/banner2.png",
     "./img/banner3.png"
 ];
 
