@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
+      /* Estilos para el cargador */
       .container {
         --uib-size: 55px;
         --uib-color: white;
@@ -80,24 +81,21 @@
     </div>
 
 <script>
-    const imagenes = ["./img/banner1.PNG", "./img/banner2.PNG", "./img/banner3.png"];
+    // 1. Usamos minúsculas estrictas para evitar errores de servidor
+    const imagenes = ["./img/banner1.png", "./img/banner2.png", "./img/banner3.png"];
     let actual = 0;
 
-    // Precarga
-    imagenes.forEach(src => { new Image().src = src; });
-
-    // Mostrar contenido al cargar
-    window.onload = function() {
-        setTimeout(() => {
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("todo-el-contenido").style.display = "block";
-        }, 500);
-    };
+    // 2. Ocultamos el loading tras 1.5 segundos SÍ O SÍ
+    // Esto evita que si una imagen falla, la pantalla quede bloqueada por siempre
+    setTimeout(function() {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("todo-el-contenido").style.display = "block";
+    }, 1500);
 
     function cambiarImagen(){
         const img = document.getElementById("imagenCarrusel");
         img.classList.remove("fade");
-        void img.offsetWidth;
+        void img.offsetWidth; 
         img.src = imagenes[actual];
         img.classList.add("fade");
     }
