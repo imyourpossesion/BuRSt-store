@@ -1,38 +1,27 @@
 const zonaDrop = document.getElementById('cartera-zona');
 let charmActivo = null;
 
-// Crear charm al arrastrar desde el menú hacia la bolsa
-zonaDrop.addEventListener('dragover', (e) => e.preventDefault());
-zonaDrop.addEventListener('drop', (e) => {
-    e.preventDefault();
-    const src = e.dataTransfer.getData('text/plain');
-    crearCharm(src, e.clientX, e.clientY);
-});
-
-// Crear charm al tocar desde el menú en celular
-document.querySelectorAll('.draggable').forEach(c => {
-    c.addEventListener('touchstart', (e) => {
-        const touch = e.touches[0];
-        crearCharm(c.src, touch.clientX, touch.clientY);
-    }, {passive: false});
-});
-
+// Lógica para crear el charm
 function crearCharm(src, x, y) {
     const nuevo = document.createElement('img');
     nuevo.src = src;
     nuevo.className = 'charm-puesto';
-    
-    // Posicionamiento inicial
     actualizarPosicion(nuevo, x, y);
-    
-    // Hacer que se pueda mover después de puesto
-    nuevo.onmousedown = (e) => charmActivo = nuevo;
-    nuevo.ontouchstart = (e) => charmActivo = nuevo;
-    
+    nuevo.onmousedown = (e) => { charmActivo = nuevo; };
+    nuevo.ontouchstart = (e) => { charmActivo = nuevo; };
     zonaDrop.appendChild(nuevo);
 }
 
-// Mover el charm activo
+// Eventos de selección desde el menú
+document.querySelectorAll('.draggable').forEach(c => {
+    c.onclick = (e) => crearCharm(c.src, e.clientX, e.clientY);
+    c.ontouchstart = (e) => {
+        const t = e.touches[0];
+        crearCharm(c.src, t.clientX, t.clientY);
+    };
+});
+
+// Movimiento global (para PC y Celular)
 document.onmousemove = (e) => {
     if (charmActivo) actualizarPosicion(charmActivo, e.clientX, e.clientY);
 };
@@ -52,7 +41,6 @@ function actualizarPosicion(el, x, y) {
     el.style.top = (y - rect.top - 30) + 'px';
 }
 
-// Funciones básicas
 function cambiarCartera(src) { document.getElementById('cartera-fondo').src = src; }
 function cambiarFondo(c) { document.body.className = 'bg-' + c; }
 function limpiar() { document.querySelectorAll('.charm-puesto').forEach(c => c.remove()); }
