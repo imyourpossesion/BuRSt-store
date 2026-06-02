@@ -21,8 +21,35 @@ body {
     position: relative; border: 2px dashed rgba(127, 45, 49, 0.3);
 }
 
-#cartera-fondo { max-width: 90%; max-height: 90%; pointer-events: none; }
+/* --- ESTILO DE LA IMAGEN DEL BOLSO --- */
+#cartera-fondo {
+    max-width: 85%; /* Ajustado para que no sea gigante */
+    max-height: 85%;
+    object-fit: contain; /* Mantiene la proporción sin estirarse */
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
 
+/* --- ESTILO DE LOS BOTONES --- */
+.controles button, .controles-fondo button {
+    background-color: #f7cdcd;
+    color: #7f2d31;
+    border: 2px solid #7f2d31;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.controles button:hover, .controles-fondo button:hover {
+    background-color: #7f2d31;
+    color: #fffdf1;
+    transform: scale(1.05);
+}
+
+/* El resto de tu CSS (fondo, flexbox, etc.) se mantiene igual */
 #charms-disponibles {
     background-color: rgba(255, 253, 241, 0.9);
     width: 320px; padding: 15px; border-radius: 20px;
