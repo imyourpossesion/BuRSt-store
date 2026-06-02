@@ -19,24 +19,32 @@
     <h1>¡Decora tu Bag!</h1>
 
     <div class="controles">
-        <button onclick="cambiarCartera('../img/polkadotbag.png')">Bolso 1</button>
-        <button onclick="cambiarCartera('../img/birkin.png')">Bolso 2</button>
-        <button onclick="cambiarCartera('../img/bolso3.png')">Bolso 3</button>
+        <button onclick="cambiarCartera('../img/polkadotbag.jpg')">Polkadot Bag</button>
+        <button onclick="cambiarCartera('../img/birkin.jpg')">Birkin Bag</button>
+        <button onclick="cambiarCartera('../img/placeholder.jpg')">Modelo Extra</button>
     </div>
 
-
-    <div id="cartera-zona">
-        <img src="../img/polkadotbag.png" id="cartera-fondo">
+    <div class="controles-fondo">
+        <button onclick="cambiarFondo('lb')">Fondo LB</button>
+        <button onclick="cambiarFondo('pink')">Fondo Pink</button>
+        <button onclick="cambiarFondo('red')">Fondo Red</button>
+        <button onclick="cambiarFondo('yellow')">Fondo Yellow</button>
     </div>
 
-    <div id="charms-disponibles">
-        <h3>Charms</h3>
-        <img src="../img/c1.png" class="draggable" draggable="true">
-        <img src="../img/c2.png" class="draggable" draggable="true">
-        <img src="../img/c3.png" class="draggable" draggable="true">
-        <img src="../img/c4.png" class="draggable" draggable="true">
-        <img src="../img/c5.png" class="draggable" draggable="true">
-        <img src="../img/c6.png" class="draggable" draggable="true">
+    <div id="contenedor-principal">
+        <div id="cartera-zona">
+            <img src="../img/polkadotbag.jpg" id="cartera-fondo">
+        </div>
+
+        <div id="charms-disponibles">
+            <h3>Charms</h3>
+            <img src="../img/c1.png" class="draggable" draggable="true">
+            <img src="../img/c2.png" class="draggable" draggable="true">
+            <img src="../img/c3.png" class="draggable" draggable="true">
+            <img src="../img/c4.png" class="draggable" draggable="true">
+            <img src="../img/c5.png" class="draggable" draggable="true">
+            <img src="../img/c6.png" class="draggable" draggable="true">
+        </div>
     </div>
 
     <button class="boton-limpiar" onclick="limpiar()">Limpiar Cartera</button>
