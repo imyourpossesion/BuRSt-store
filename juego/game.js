@@ -1,52 +1,49 @@
 const zonaDrop = document.getElementById('cartera-zona');
 let charmActivo = null;
+let offsetX, offsetY;
 
-// Crear charm al hacer clic/tocar desde el menú
-document.querySelectorAll('.draggable').forEach(c => {
-    c.onclick = () => crearCharm(c.src);
-    c.ontouchstart = (e) => {
-        e.preventDefault();
-        crearCharm(c.src);
+// Hacemos que todos los elementos con clase .draggable sean movibles
+document.querySelectorAll('.draggable').forEach(charm => {
+    // Para mouse
+    charm.onmousedown = (e) => {
+        charmActivo = charm;
+        charm.style.position = 'absolute';
+        const rect = charm.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+    };
+
+    // Para táctil
+    charm.ontouchstart = (e) => {
+        charmActivo = charm;
+        charm.style.position = 'absolute';
+        const touch = e.touches[0];
+        const rect = charm.getBoundingClientRect();
+        offsetX = touch.clientX - rect.left;
+        offsetY = touch.clientY - rect.top;
     };
 });
 
-function crearCharm(src) {
-    const nuevo = document.createElement('img');
-    nuevo.src = src;
-    nuevo.className = 'charm-puesto';
-    // Posición inicial en el centro
-    nuevo.style.left = "150px";
-    nuevo.style.top = "150px";
-    
-    nuevo.onmousedown = (e) => charmActivo = nuevo;
-    nuevo.ontouchstart = (e) => charmActivo = nuevo;
-    
-    zonaDrop.appendChild(nuevo);
-}
-
 // Movimiento global
 document.onmousemove = (e) => {
-    if (charmActivo) moverElemento(charmActivo, e.clientX, e.clientY);
+    if (charmActivo) {
+        charmActivo.style.left = (e.clientX - offsetX) + 'px';
+        charmActivo.style.top = (e.clientY - offsetY) + 'px';
+    }
 };
+
 document.ontouchmove = (e) => {
     if (charmActivo) {
         e.preventDefault();
-        moverElemento(charmActivo, e.touches[0].clientX, e.touches[0].clientY);
+        const touch = e.touches[0];
+        charmActivo.style.left = (touch.clientX - offsetX) + 'px';
+        charmActivo.style.top = (touch.clientY - offsetY) + 'px';
     }
 };
 
 document.onmouseup = () => charmActivo = null;
 document.ontouchend = () => charmActivo = null;
 
-function moverElemento(el, x, y) {
-    const rect = zonaDrop.getBoundingClientRect();
-    el.style.left = (x - rect.left - 30) + 'px';
-    el.style.top = (y - rect.top - 30) + 'px';
-}
-
+// Funciones de utilidad
 function cambiarCartera(src) { document.getElementById('cartera-fondo').src = src; }
 function cambiarFondo(c) { document.body.className = 'bg-' + c; }
-function limpiar() { document.querySelectorAll('.charm-puesto').forEach(c => c.remove()); }
-function cambiarCartera(src) { document.getElementById('cartera-fondo').src = src; }
-function cambiarFondo(c) { document.body.className = 'bg-' + c; }
-function limpiar() { document.querySelectorAll('.charm-puesto').forEach(c => c.remove()); }
