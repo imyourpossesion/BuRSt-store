@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego - Decorar Cartera</title>
     <link rel="stylesheet" href="juego.css">
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
-
-    <div class="barra">
+<body class="bg-yellow"> <div class="barra">
        <a href="../index.html"> <img src="../img/home.png" class="boton"></a>
        <a href="../info.html"> <img src="../img/about.png" class="boton"> </a>
        <a href="../contactos.html"> <img src="../img/contacto.png" class="boton"></a>
@@ -18,16 +17,16 @@
     <h1>¡Decora tu Bag!</h1>
 
     <div class="controles">
-        <button onclick="cambiarCartera('../img/polkadotbag.jpg')">Polkadot Bag</button>
-        <button onclick="cambiarCartera('../img/birkin.jpg')">Birkin Bag</button>
+        <button onclick="cambiarCartera('../img/polkadotbag.jpg')">Bonita Bag</button>
+        <button onclick="cambiarCartera('../img/birkin.jpg')">Demure Bag</button>
         <button onclick="cambiarCartera('../img/placeholder.png')">Modelo Extra</button>
     </div>
 
     <div class="controles-fondo">
-        <button onclick="cambiarFondo('lb')">Fondo Cielo</button>
-        <button onclick="cambiarFondo('pink')">Fondo Rosa</button>
-        <button onclick="cambiarFondo('red')">Fondo Rojo</button>
-        <button onclick="cambiarFondo('yellow')">Fondo Amarillo</button>
+        <button onclick="cambiarFondo('yellow')">Soft</button>
+        <button onclick="cambiarFondo('lb')">Sky</button>
+        <button onclick="cambiarFondo('pink')">Sakura</button>
+        <button onclick="cambiarFondo('red')">Vampire</button>
     </div>
 
     <div id="contenedor-principal">
