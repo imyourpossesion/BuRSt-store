@@ -1,30 +1,29 @@
-/* Eliminamos el borde y el fondo del contenedor */
 #cartera-zona {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ocupa el ancho disponible */
-    max-width: 400px; /* Tamaño máximo deseado */
-    height: auto; /* Ajuste automático de altura */
+    width: 350px; /* Tamaño estable */
+    height: 350px; /* Tamaño estable */
     position: relative;
     margin: 0 auto;
-    overflow: visible; /* Cambiado a visible para que no corte si se sale un poco */
-    border: none; /* ELIMINA EL CUADRO */
-    background: transparent; /* ELIMINA EL FONDO DEL CUADRO */
+    overflow: hidden; 
+    
+    /* ESTO LE DA LOS BORDES REDONDEADOS */
+    border: 3px solid #f7cdcd; /* Borde suave */
+    border-radius: 30px;      /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.5); /* Un fondo suave para que contraste */
 }
 
-/* Hacemos que la imagen de la cartera sea más grande y fluida */
 #cartera-fondo {
-    width: 100%; 
-    height: auto;
+    max-width: 90%; /* Asegura que la imagen no toque los bordes */
+    max-height: 90%;
     pointer-events: none;
-    display: block;
 }
 
-/* Ajuste específico para móvil según la imagen 1000202935.png */
+/* Ajuste específico para móvil para que no se rompa el diseño */
 @media (max-width: 768px) {
     #cartera-zona {
-        width: 90%; /* Más grande en móvil */
-        height: auto;
+        width: 300px;
+        height: 300px;
     }
 }
