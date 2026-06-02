@@ -1,0 +1,197 @@
+/* juego/juego.css */
+
+/* --- CONFIGURACIÓN GLOBAL --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    /* Usamos el mismo fondo amarillo soft de la tienda */
+    background-image: url('../bg/yellow.jpg');
+    background-position: top center;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    text-align: center;
+}
+
+/* --- TEXTOS --- */
+h1 {
+    color: #7f2d31; /* El color café rojizo de Burst */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+p {
+    color: #7f2d31;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+}
+
+/* --- ÁREA DE JUEGO PRINCIPAL --- */
+
+/* Contenedor que agrupa la cartera y el panel de charms */
+.juego-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap; /* Para móviles */
+}
+
+/* 1. La Cartera (Zona de Drop) */
+#cartera-zona {
+    background-color: #fbe5df; /* Fondo rosa soft, como el cuadro de novedades */
+    width: 90%;
+    max-width: 450px;
+    height: 450px; /* Altura fija para que sea un cuadrado cómodo */
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(127, 45, 49, 0.08);
+    border: 2px dashed rgba(127, 45, 49, 0.3); /* Borde punteado delicado */
+    position: relative; /* CRÍTICO: para que los charms se posicionen dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Para que nada se salga del borde */
+}
+
+/* La imagen de la cartera dentro de la zona */
+#cartera-fondo {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    pointer-events: none; /* Evita que el usuario arrastre la cartera por error */
+    user-select: none;
+}
+
+/* 2. El Panel de Charms Disponibles */
+#charms-disponibles {
+    background-color: rgba(255, 253, 241, 0.7); /* Fondo crema muy transparente */
+    width: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(247, 205, 205, 0.5);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+#charms-disponibles h3 {
+    width: 100%;
+    color: #7f2d31;
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 2px dotted #7f2d31;
+    padding-bottom: 10px;
+}
+
+/* --- ESTILOS DE LOS CHARMS --- */
+
+/* Charms que se están arrastrando */
+.draggable {
+    width: 50px; /* Tamaño del charm en el panel */
+    height: 50px;
+    object-fit: contain;
+    cursor: grab; /* Cambia el mouse a una manita */
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.draggable:hover {
+    transform: scale(1.15); /* Efecto hover suave */
+}
+
+.draggable:active {
+    cursor: grabbing; /* Manita cerrada al arrastrar */
+}
+
+/* Charms ya puestos sobre la cartera */
+.charm-puesto {
+    width: 40px; /* Un poco más pequeños al ponerlos */
+    height: 40px;
+    object-fit: contain;
+    cursor: move; /* Mouse de "mover" */
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Sombra para dar profundidad */
+}
+
+.charm-puesto:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(127, 45, 49, 0.5); /* Brillo al pasar el mouse por encima */
+    border-radius: 5px;
+}
+
+/* --- BOTÓN LIMPIAR --- */
+.boton-limpiar {
+    background-color: #f7cdcd; /* Color rosa pastel de Burst */
+    color: #7f2d31;
+    border: 2px solid #7f2d31;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 30px auto;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.boton-limpiar:hover {
+    background-color: #7f2d31; /* Invertimos colores al hover */
+    color: #fffdf1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(127, 45, 49, 0.3);
+}
+
+/* --- BOTÓN VOLVER (opcional) --- */
+.boton-volver {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #7f2d31;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.boton-volver:hover {
+    opacity: 1;
+}
+
+/* --- RESPONSIVE MÓVILES --- */
+@media (max-width: 768px) {
+    .juego-flex-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #cartera-zona {
+        width: 320px;
+        height: 320px;
+    }
+
+    #charms-disponibles {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .draggable {
+        width: 40px;
+        height: 40px;
+    }
+}
