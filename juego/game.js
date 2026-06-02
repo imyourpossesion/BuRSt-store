@@ -1,6 +1,6 @@
 const zonaDrop = document.getElementById('cartera-zona');
 
-// Soporte PC
+// PC: Drag and Drop
 document.querySelectorAll('.draggable').forEach(charm => {
     charm.addEventListener('dragstart', (e) => e.dataTransfer.setData('text/plain', e.target.src));
 });
@@ -11,17 +11,17 @@ zonaDrop.addEventListener('drop', (e) => {
     colocarCharm(e.dataTransfer.getData('text/plain'), e.clientX, e.clientY);
 });
 
-// Soporte Móvil (Touch)
+// Móvil: Touch Events
 document.querySelectorAll('.draggable').forEach(charm => {
     charm.addEventListener('touchstart', (e) => {
         const touch = e.touches[0];
         const nuevoCharm = colocarCharm(charm.src, touch.clientX, touch.clientY);
         
-        // Hacer que el charm siga el dedo mientras se mueve
         nuevoCharm.ontouchmove = (ev) => {
             const t = ev.touches[0];
-            nuevoCharm.style.left = (t.clientX - zonaDrop.getBoundingClientRect().left - 20) + 'px';
-            nuevoCharm.style.top = (t.clientY - zonaDrop.getBoundingClientRect().top - 20) + 'px';
+            const rect = zonaDrop.getBoundingClientRect();
+            nuevoCharm.style.left = (t.clientX - rect.left - 20) + 'px';
+            nuevoCharm.style.top = (t.clientY - rect.top - 20) + 'px';
         };
     });
 });
