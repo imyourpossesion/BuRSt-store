@@ -1,23 +1,32 @@
-body { margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center; background-position: top center; background-repeat: repeat-y; background-size: 100% auto; }
-.bg-lb { background-image: url('../bg/lb.jpg'); }
-.bg-pink { background-image: url('../bg/pink.jpg'); }
-.bg-red { background-image: url('../bg/red.jpg'); }
-.bg-yellow { background-image: url('../bg/yellow.jpg'); }
+body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-position: top center; background-repeat: repeat-y; background-size: 100% auto; }
+
+/* Contenedor que obliga a todo a centrarse */
+#contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px auto;
+}
 
 #cartera-zona {
     display: flex; justify-content: center; align-items: center;
-    margin: 20px auto; background-color: #fbe5df;
-    width: 450px; height: 450px; border-radius: 20px;
+    background-color: #fbe5df;
+    width: 400px; height: 400px; border-radius: 20px;
     position: relative; border: 2px dashed rgba(127, 45, 49, 0.3);
 }
-#cartera-fondo { max-width: 80%; max-height: 80%; pointer-events: none; }
+
+#cartera-fondo { max-width: 90%; max-height: 90%; pointer-events: none; }
 
 #charms-disponibles {
-    background-color: rgba(255, 253, 241, 0.7);
-    width: 300px; padding: 20px; border-radius: 20px;
-    margin: 20px auto; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background-color: rgba(255, 253, 241, 0.9);
+    width: 320px; padding: 15px; border-radius: 20px;
+    display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;
+    border: 1px solid #f7cdcd;
 }
+
 .draggable { width: 50px; cursor: grab; }
 .charm-puesto { width: 40px; position: absolute; cursor: move; }
-.controles, .controles-fondo { margin: 10px; }
-.boton-limpiar { background-color: #f7cdcd; color: #7f2d31; border: 2px solid #7f2d31; padding: 10px 20px; border-radius: 30px; cursor: pointer; }
+.controles, .controles-fondo { text-align: center; margin: 10px; }
+.boton-limpiar { display: block; margin: 20px auto; background-color: #f7cdcd; color: #7f2d31; border: 2px solid #7f2d31; padding: 10px 20px; border-radius: 30px; cursor: pointer; }
