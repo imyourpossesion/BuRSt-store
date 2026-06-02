@@ -1,486 +1,247 @@
 html {
-
     scroll-behavior: smooth;
-
 }
-
-
 
 body {
-
     margin: 0;
-
     padding: 0;
-
     font-family: Arial, sans-serif;
-
     width: 100%;
-
     overflow-x: hidden; 
-
     position: relative;
-
 }
-
-
 
 /* --- CAPA DE FONDO DEFINITIVA --- */
-
 .fondo-repetido {
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%; 
-
     background-image: url('./bg/yellow.jpg');
-
     background-position: top center;
-
-    background-repeat: repeat-y; /* Se duplica hacia abajo sin romperse */
-
-    background-size: 100% auto;  /* Se ajusta al ancho de la PC perfectamente sin estirarse verticalmente */
-
-    z-index: -1;                 
-
+    background-repeat: repeat-y;
+    background-size: 100% auto; 
+    z-index: -1;                  
 }
-
-
 
 /* --- PANTALLA DE CARGA --- */
-
 #loading {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100vw;
-
     height: 100vh;
-
     background: #acdbf1; 
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
     z-index: 9999;
-
 }
-
-
 
 .gif-carga {
-
     width: 50px;
-
     height: 50px;
-
     opacity: 0.3;
-
 }
-
-
 
 /* --- CONTENEDOR PRINCIPAL --- */
-
 #todo-el-contenido {
-
     width: 100%;
-
     margin: 0;
-
     padding: 0;
-
     display: block; 
-
     position: relative;
-
     z-index: 1;
-
 }
-
-
 
 /* --- BARRA DE NAVEGACIÓN --- */
-
 .barra {
-
     background-color: #f7cdcd; 
-
     height: 80px;
-
     width: 100%;
-
     border-bottom: 3px dotted #7f2d31; 
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 25px;
-
     box-sizing: border-box;
-
 }
-
-
 
 .barra button {
-
     background: none;
-
     border: none;
-
     cursor: pointer;
-
 }
-
-
 
 .boton {
-
     width: 35px;
-
     height: 35px;
-
     filter: invert(21%) sepia(31%) saturate(3015%) hue-rotate(328deg) brightness(93%) contrast(88%);
-
     transition: transform 0.3s ease, opacity 0.3s ease; 
-
     cursor: pointer;
-
 }
-
-
 
 .boton:hover {
-
     transform: scale(1.15); 
-
     opacity: 0.7;
-
 }
 
-
-
+/* --- LOGOS (TAMAÑO AMPLIADO) --- */
 .logo-img1 {
-
-    width: 40%;
-
-    max-width: 200px;
-
-    margin-bottom: 20px; /* Separación sutil del cargador animado */
-
+    width: 60%;
+    max-width: 400px; /* Tamaño más grande */
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
 
 .logo-img2 {
-
     display: block;
-
     margin: 40px auto; 
-
-    width: 25%;
-
-    max-width: 180px;
-
+    width: 50%;
+    max-width: 350px; /* Tamaño más grande */
 }
-
-
 
 /* --- TEXTOS --- */
-
 h1 {
-
     text-align: center;
-
     color: #7f2d31; 
-
     animation: aparecer 1s;
-
     margin-top: 20px;
-
 }
-
-
 
 h2 {
-
     text-align: center;
-
     color: #7f2d31; 
-
 }
-
-
 
 p {
-
     text-align: center;
-
     color: #7f2d31; 
-
 }
-
-
 
 @keyframes aparecer {
-
     from { opacity: 0; transform: translateY(20px); }
-
     to { opacity: 1; transform: translateY(0px); }
-
 }
-
-
 
 /* --- CUADRADO DE NOVEDADES Y CARRUSEL --- */
-
 .contenedor-novedades {
-
     background-color: #fbe5df; 
-
     width: 90%;
-
     max-width: 850px;          
-
     margin: 30px auto;         
-
     padding: 30px;             
-
     border-radius: 20px;       
-
     box-shadow: 0 6px 20px rgba(127, 45, 49, 0.08); 
-
     border: 1px solid rgba(247, 205, 205, 0.5); 
-
     box-sizing: border-box;
-
 }
-
-
 
 .contenedor-novedades h2 {
-
     margin-top: 0;
-
     margin-bottom: 25px;
-
 }
-
-
 
 .carrusel {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 20px;
-
     width: 100%;
-
 }
-
-
 
 .carrusel img {
-
     width: 100%;
-
     max-width: 700px;
-
     height: auto;
-
     max-height: 350px;
-
     object-fit: cover;
-
     border-radius: 10px;
-
     box-shadow: 0 10px 15px -5PX rgba(0, 0, 0, 0.2);
-
 }
-
-
 
 .fade { animation: fade 0.5s; }
-
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
-
-
 .carrusel button {
-
     font-size: 20px;
-
     border: 2px solid #7f2d31; 
-
     background: transparent;   
-
-    color: #7f2d31;             
-
+    color: #7f2d31;            
     width: 45px;
-
     height: 45px;
-
     border-radius: 50%;
-
     cursor: pointer;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     transition: all 0.3s ease; 
-
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-
     flex-shrink: 0;
-
 }
-
-
 
 .carrusel button:hover {
-
     background: #7f2d31; 
-
     color: #fffdf1;        
-
     transform: scale(1.1);     
-
     box-shadow: 0 4px 10px rgba(127, 45, 49, 0.3); 
-
 }
-
-
 
 /* --- SECCIÓN DE PRODUCTOS --- */
-
 .producto {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     width: 100%;
-
     margin-bottom: 35px;
-
 }
-
-
 
 .foto-producto {
-
     width: 90%;
-
     max-width: 400px;
-
     height: auto;
-
     border-radius: 20px;
-
     box-shadow: 0 4px 12px rgba(127, 45, 49, 0.12);
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
     cursor: pointer;
-
     margin-bottom: 15px;
-
 }
-
-
 
 .foto-producto:hover {
-
     transform: scale(1.04); 
-
     box-shadow: 0 8px 24px rgba(127, 45, 49, 0.25);
-
 }
 
-
-
 /* --- VERSIÓN DISPOSITIVOS MÓVILES --- */
-
 @media (max-width: 768px) {
-
     .barra {
-
         height: 65px;
-
         gap: 15px;
-
     }
-
     .logo-img1, .logo-img2 {
-
-        width: 50%;
-
+        width: 80%; /* Ajuste para que se vea bien en celular */
     }
-
     .contenedor-novedades {
-
         padding: 15px;
-
         margin: 20px auto;
-
         width: 92%;
-
     }
-
     .carrusel {
-
         gap: 10px;
-
     }
-
     .carrusel img {
-
         max-height: 180px;
-
     }
-
     .carrusel button {
-
         width: 35px;
-
         height: 35px;
-
         font-size: 14px;
-
     }
-
     .foto-producto {
-
         max-width: 280px;
-
     }
-
-} 
-
+}
