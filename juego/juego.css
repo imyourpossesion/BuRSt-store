@@ -1,13 +1,17 @@
-body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-position: top center; background-repeat: repeat-y; background-size: 100% auto; }
+/* juego/juego.css */
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    /* Cambia 'yellow.jpg' por el nombre del archivo que quieras */
+    background-image: url('../bg/yellow.jpg'); 
+    background-position: top center; 
+    background-repeat: repeat-y; 
+    background-size: 100% auto; 
+}
 
-/* Contenedor que obliga a todo a centrarse */
-#contenedor-principal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin: 20px auto;
+/* ... el resto del CSS que ya teníamos ... */
 }
 
 #cartera-zona {
