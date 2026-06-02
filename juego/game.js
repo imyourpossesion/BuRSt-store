@@ -15,7 +15,6 @@ zonaDrop.addEventListener('drop', (e) => {
     nuevoCharm.src = src;
     nuevoCharm.className = 'charm-puesto';
     
-    // Obtener coordenadas relativas al div
     const rect = zonaDrop.getBoundingClientRect();
     nuevoCharm.style.left = (e.clientX - rect.left - 20) + 'px';
     nuevoCharm.style.top = (e.clientY - rect.top - 20) + 'px';
