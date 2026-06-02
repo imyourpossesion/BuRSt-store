@@ -21,6 +21,10 @@ button:hover { background-color: #7f2d31; color: #fffdf1; transform: scale(1.05)
 @media (max-width: 768px) {
     .aviso-movil { display: block; }
     .draggable { width: 85px !important; }
-    .charm-puesto { width: 75px !important; }
     #cartera-zona { width: 300px; height: 300px; }
+}
+.charmuesto {
+    position: absolute;
+    cursor: move;
+    z-index: 100;
 }
