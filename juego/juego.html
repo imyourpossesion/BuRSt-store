@@ -6,11 +6,10 @@
     <title>Juego - Decorar Cartera</title>
     <link rel="stylesheet" href="juego.css">
     <link rel="stylesheet" href="../style.css">
-    <div class="aviso-movil">
-    <p>📱 <strong>SOLO PARA CELULAR:</strong> Si estás en celular, toca el charm dos veces y arrástralo para moverlo.</p>
-</div>
 </head>
-<body class="bg-yellow"> <div class="barra">
+<body class="bg-yellow">
+
+    <div class="barra">
        <a href="../index.html"> <img src="../img/home.png" class="boton"></a>
        <a href="../info.html"> <img src="../img/about.png" class="boton"> </a>
        <a href="../contactos.html"> <img src="../img/contacto.png" class="boton"></a>
@@ -18,6 +17,10 @@
     </div>
 
     <h1>¡Decora tu Bag!</h1>
+
+    <div class="aviso-movil">
+        <p>📱 <strong>SOLO PARA CELULAR:</strong> Mantén presionado el charm y arrástralo para moverlo.</p>
+    </div>
 
     <div class="controles">
         <button onclick="cambiarCartera('../img/polkadotbag.jpg')">Bonita Bag</button>
@@ -39,16 +42,18 @@
 
         <div id="charms-disponibles">
             <h3>Charms</h3>
-            <img src="../img/placeholder.png" class="draggable" draggable="true">
-            <img src="../img/placeholder.png" class="draggable" draggable="true">
-            <img src="../img/placeholder.png" class="draggable" draggable="true">
-            <img src="../img/placeholder.png" class="draggable" draggable="true">
-            <img src="../img/placeholder.png" class="draggable" draggable="true">
-            <img src="../img/placeholder.png" class="draggable" draggable="true">
+            <img src="../img/c1.png" class="draggable" draggable="true">
+            <img src="../img/c2.png" class="draggable" draggable="true">
+            <img src="../img/c3.png" class="draggable" draggable="true">
+            <img src="../img/c4.png" class="draggable" draggable="true">
+            <img src="../img/c5.png" class="draggable" draggable="true">
+            <img src="../img/c6.png" class="draggable" draggable="true">
+            <img src="../img/c7.png" class="draggable" draggable="true">
+            <img src="../img/c8.png" class="draggable" draggable="true">
         </div>
     </div>
 
-    <button onclick="limpiar()">Limpiar Cartera</button>
+    <button class="boton-accion" onclick="limpiar()">Limpiar Cartera</button>
 
     <script src="game.js"></script>
 </body>
