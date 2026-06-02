@@ -2,22 +2,50 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Decorar Cartera</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - Decorar Cartera</title>
     <link rel="stylesheet" href="juego.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h1>¡Decora tu propia Bag!</h1>
-    
+
+    <div class="barra">
+       <a href="../index.html"> <img src="../img/home.png" class="boton"></a>
+       <a href="../info.html"> <img src="../img/about.png" class="boton"> </a>
+       <a href="../contactos.html"> <img src="../img/contacto.png" class="boton"></a>
+       <a href="juego.html"> <img src="../img/juego.png" class="boton"></a>
+    </div>
+
+    <h1>¡Decora tu Bag!</h1>
+
+    <div class="controles">
+        <button onclick="cambiarCartera('../img/bolso1.png')">Bolso 1</button>
+        <button onclick="cambiarCartera('../img/bolso2.png')">Bolso 2</button>
+        <button onclick="cambiarCartera('../img/bolso3.png')">Bolso 3</button>
+    </div>
+
+    <div class="controles-fondo">
+        <button onclick="cambiarFondo('lb')">Fondo LB</button>
+        <button onclick="cambiarFondo('pink')">Fondo Pink</button>
+        <button onclick="cambiarFondo('red')">Fondo Red</button>
+        <button onclick="cambiarFondo('yellow')">Fondo Yellow</button>
+    </div>
+
     <div id="cartera-zona">
-        <img src="../img/polkadotbag.jpg" id="cartera-fondo">
+        <img src="../img/bolso1.png" id="cartera-fondo">
     </div>
 
     <div id="charms-disponibles">
-        <img src="../img/charm1.png" class="draggable" draggable="true">
-        <img src="../img/charm2.png" class="draggable" draggable="true">
+        <h3>Charms</h3>
+        <img src="../img/c1.png" class="draggable" draggable="true">
+        <img src="../img/c2.png" class="draggable" draggable="true">
+        <img src="../img/c3.png" class="draggable" draggable="true">
+        <img src="../img/c4.png" class="draggable" draggable="true">
+        <img src="../img/c5.png" class="draggable" draggable="true">
+        <img src="../img/c6.png" class="draggable" draggable="true">
     </div>
 
-    <button onclick="limpiar()">Limpiar</button>
+    <button class="boton-limpiar" onclick="limpiar()">Limpiar Cartera</button>
 
     <script src="game.js"></script>
 </body>
