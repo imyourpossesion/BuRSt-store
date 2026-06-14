@@ -245,3 +245,32 @@ p {
         max-width: 280px;
     }
 }
+.footer-marca {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #fffdf1; /* Color crema suave */
+    border-top: 2px solid #f7cdcd;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-marca p {
+    color: #7f2d31;
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.footer-logo {
+    width: 80px; /* Ajusta este tamaño según tu logo */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
